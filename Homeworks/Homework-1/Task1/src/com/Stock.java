@@ -2,15 +2,25 @@ package com;
 
 public class Stock
 {
-    private  String symbol; //Intellij suggests the variable to be "final"
-    private  String name;   //Intellij suggests the variable to be "final"
+    private String symbol; //Intellij suggests the variable to be "final"
+    private String name;   //Intellij suggests the variable to be "final"
     private double previousClosingPrice;
     private double currentPrice;
 
     public Stock(String symbol, String name)
     {
-        this.symbol = symbol; //this.symbol is the field variable, symbol is the function parameter
-        this.name = name;     //this.name is the field variable, name is the function parameter
+        if (symbol != null)
+        {
+            this.symbol = symbol; //this.symbol is the field variable, symbol is the function parameter
+        } else throw new IllegalArgumentException("Symbol cannot be null");
+
+        if (name != null)
+        {
+            this.name = name;     //this.name is the field variable, name is the function parameter
+        } else throw new IllegalArgumentException("Name cannot be null");
+
+        this.previousClosingPrice = 0; // initial value
+        this.currentPrice = 0;         // initial value
     }
 
     public String getSymbol()
@@ -49,6 +59,6 @@ public class Stock
     {
         double difference = this.currentPrice - this.previousClosingPrice;   //getting the difference between current and previous stock price
         return difference / this.previousClosingPrice * 100;                 //getting the percentage
-                                                                             //if it is positive number its increase, if it is negative number its decrease
+        //if it is positive number its increase, if it is negative number its decrease
     }
 }

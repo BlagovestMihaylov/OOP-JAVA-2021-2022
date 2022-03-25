@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="218.0" prefWidth="550.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.numberconventor.HelloController">
+   <children>
+      <GridPane hgap="10.0" layoutY="1.0" prefHeight="350.0" prefWidth="550.0" vgap="10.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="254.0" minWidth="10.0" prefWidth="143.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="412.0" minWidth="10.0" prefWidth="377.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints maxHeight="141.0" minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="141.0" minHeight="10.0" prefHeight="88.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="228.0" minHeight="10.0" prefHeight="92.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="270.0" minHeight="10.0" prefHeight="79.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button fx:id="bntDecimal" mnemonicParsing="false" onAction="#bntDecimalOnActionHandler" prefHeight="25.0" prefWidth="169.0" text="Decimal" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="bntHex" mnemonicParsing="false" onAction="#bntHexOnActionHandler" prefHeight="25.0" prefWidth="145.0" text="Hex" GridPane.rowIndex="2">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="bntBinary" mnemonicParsing="false" onAction="#bntBinaryOnActionHandler" prefHeight="25.0" prefWidth="146.0" text="Binary" GridPane.rowIndex="3">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <TextField fx:id="txtDecimal" alignment="CENTER_RIGHT" onAction="#txtDecimalOnActionHadnler" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtHex" alignment="CENTER_RIGHT" onAction="#txtHexOnActionHadnler" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtBinary" alignment="CENTER_RIGHT" onAction="#txtBinaryOnActionHadnler" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </TextField>
+            <MenuBar>
+              <menus>
+                <Menu fx:id="mniConvert" mnemonicParsing="false" onAction="#mniConvertOnActionHadnler" text="Convert">
+                  <items>
+                    <MenuItem fx:id="mniDecimal" mnemonicParsing="false" onAction="#mniDecimalOnActionHadnler" text="Decimal" />
+                        <MenuItem fx:id="mniHex" mnemonicParsing="false" onAction="#mniHexlOnActionHadnler" text="Hex" />
+                        <MenuItem fx:id="minBinary" mnemonicParsing="false" onAction="#mniBinaryOnActionHandler" text="Binary" />
+                  </items>
+                </Menu>
+                <Menu fx:id="mniQuit" mnemonicParsing="false" onAction="#mniQuitOnActionHandler" text="Quit" />
+              </menus>
+            </MenuBar>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>
